@@ -1,17 +1,21 @@
-# TaskFlow — Task Management Application
+# Thiranex Internship Projects
+
+Projects completed during the Thiranex internship.
+
+## TaskFlow — Task Management Application
 
 A full-stack task management web app with user authentication, CRUD operations, real-time WebSocket updates, and a responsive UI for desktop and mobile.
 
 **Due date:** 02 Jun 2026
 
-## Features
+### Features
 
 - **Authentication** — Register, login, JWT-based sessions; each user only sees their own tasks
 - **Task CRUD** — Create, read, update, and delete tasks with title, description, status, priority, and due date
 - **Real-time sync** — Socket.io broadcasts task changes instantly across tabs/devices
 - **Responsive design** — Mobile-first layout with adaptive grids and touch-friendly controls
 
-## Tech Stack
+### Tech Stack
 
 | Layer    | Technology                          |
 |----------|-------------------------------------|
@@ -21,10 +25,9 @@ A full-stack task management web app with user authentication, CRUD operations, 
 | Auth     | JWT + bcrypt                        |
 | Realtime | Socket.io                           |
 
-## Project Structure
+### Project Structure
 
 ```
-task-management-app/
 ├── backend/          # Express API + WebSocket server
 │   └── src/
 │       ├── routes/   # auth & tasks endpoints
@@ -37,24 +40,24 @@ task-management-app/
         └── hooks/    # WebSocket hook
 ```
 
-## Getting Started
+### Getting Started
 
-### Prerequisites
+#### Prerequisites
 
 - Node.js 18+
 
-### 1. Install dependencies
+#### 1. Install dependencies
 
 ```bash
 cd backend && npm install
 cd ../frontend && npm install
 ```
 
-### 2. Configure environment
+#### 2. Configure environment
 
 Copy `backend/.env.example` to `backend/.env` and set a strong `JWT_SECRET` for production.
 
-### 3. Run the app
+#### 3. Run the app
 
 **Terminal 1 — API server:**
 ```bash
@@ -70,7 +73,7 @@ npm run dev
 
 Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-## API Reference
+### API Reference
 
 | Method | Endpoint           | Auth | Description        |
 |--------|--------------------|------|--------------------|
@@ -82,7 +85,7 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 | PUT    | `/api/tasks/:id`     | Yes  | Update task        |
 | DELETE | `/api/tasks/:id`     | Yes  | Delete task        |
 
-## WebSocket Events
+### WebSocket Events
 
 Connect with `auth: { token: <JWT> }`. Events per user room:
 
@@ -90,7 +93,7 @@ Connect with `auth: { token: <JWT> }`. Events per user room:
 - `task:updated` — updated task payload
 - `task:deleted` — `{ id }` of removed task
 
-## Learning Outcomes
+### Learning Outcomes
 
 This project demonstrates:
 
